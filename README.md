@@ -7,7 +7,7 @@ In this repo we use a PDP graph for a multiclass classification problem to under
 
 ## PDP Samples:
 
-| legend |
+| legend ||
 | ----------- | ----------- |
 |X_Axis| Sepal Length|
 |Y_Axis| Mean probability of classification (type is the title of the subplots)|
