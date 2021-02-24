@@ -7,10 +7,10 @@ In this repo we use a PDP graph for a multiclass classification problem to under
 
 ## PDP Samples:
 
-| legend ||
+| legend |
 | ----------- | ----------- |
 |X_Axis| Sepal Length|
-|Y_Axis: Mean probability of classification (type is the title of the subplots)|
+|Y_Axis| Mean probability of classification (type is the title of the subplots)|
 
 #### Training 1:
 ![img 1](images/c1.JPG "Training 1")
