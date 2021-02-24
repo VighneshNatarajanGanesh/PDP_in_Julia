@@ -11,6 +11,8 @@ using MLJ
 using DataFrames
 using Plots
 
+# For more details on the model, visit: https://alan-turing-institute.github.io/MLJ.jl/dev/getting_started/
+
 #load iris dataset
 import RDatasets
 iris = RDatasets.dataset("datasets", "iris");
