@@ -1,0 +1,4 @@
+name = "ParDepPlot"
+uuid = "2b15b4ef-133d-4827-88be-d2ae1dc0616e"
+authors = ["Vighnesh Natarajan Ganesh <ngvighnesh@gmail.com>"]
+version = "0.1.0"

@@ -1,3 +1,5 @@
+module ParDepPlot
+
 function PDP(mach::Machine, df::DataFrame, targetColumn::String, targets::Array{String})
         #=
         This function returns a 1-D PDP plot of multi-class-classification model
@@ -42,3 +44,5 @@ function PDP(mach::Machine, df::DataFrame, targetColumn::String, targets::Array{
         return p
 
 end
+
+end # for the module
