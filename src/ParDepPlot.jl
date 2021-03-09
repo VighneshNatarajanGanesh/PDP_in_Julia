@@ -51,13 +51,12 @@ end
 
 function PDP(mach::Machine, df::DataFrame, depColumn::String)
         #=
-        This function returns a 1-D PDP plot of multi-class-classification model
+        This function returns a 1-D PDP plot for numeric predictions of a model
 
         Arguments:
         mach: The machine (the wrapping the model in data)
         df: The dataframe containing the test data
         depColumn: The feature for which PDP plot must be drawn
-        categories: The different classes of the targetColumn for which plot must be generated
 
         Returns:
         a plot with separate subplots for each category mentioned in categories argument
