@@ -31,6 +31,10 @@ Here we use the iris dataset to train a simple DecisionTreeClassifier and see ho
 ![img 1](images/c1.JPG "Sample 2 Training 1")
 
 #### Training 2:
+After setting the max depth of the trees to 4
+```
+tree = Tree(max_depth = 4)
+```
 ![img 2](images/c2.JPG " Sample 2 Training 2")
 
 These plots show the isolated effect of just the Sepal Length on the classification done by the model. 
