@@ -59,7 +59,7 @@ function PDP(mach::Machine, df::DataFrame, depColumn::String)
         depColumn: The feature for which PDP plot must be drawn
 
         Returns:
-        a plot with separate subplots for each category mentioned in categories argument
+        a pdp plot
         =#
 
         # cross product the target feature for PDP along with non-target features to get data
