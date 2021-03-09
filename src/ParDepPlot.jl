@@ -41,7 +41,7 @@ function PDPCategorical(mach::Machine, df::DataFrame, depColumn::String, categor
         for i in 1:length(categories)
                 meanYHat = combine(groupedDfCross,categories[i]=>mean=>"mean")
                 sort!(meanYHat, depColumn) # to make sure the the db is in ascending order of target var
-                plot!(p, meanYHat[!, depColumn], meanYHat[!, "mean"], subplot=i, title=string(categories[i]))
+                plot!(p, meanYHat[!, depColumn], meanYHat[!, "mean"], subplot=i, title=string(categories[i]), xlabel=depColumn, ylabel="output", legend=false, guidefontsize=7)
         end
 
         # return the subplot
@@ -72,28 +72,17 @@ function PDP(mach::Machine, df::DataFrame, depColumn::String)
         # make the predictions
         yhat = predict(mach, dfCross)
         dfCross[!, :predictions] = yhat
-        # for x in categories
-        #         dfCross[!, x] = broadcast(pdf, yhat, x)
-        # end
 
         # group by the depColumn
         groupedDfCross = groupby(dfCross, depColumn)
-
-        describe(dfCross)
 
         # calculate mean of all predictions for each value in dep column
         meanYHat = combine(groupedDfCross, :predictions=>mean=>"mean")
         sort!(meanYHat, depColumn)
 
         #plot
-        p = plot(meanYHat[!, depColumn], meanYHat[!, "mean"], title=string("PDP Plot: Predictions vs ", depColumn))
+        p = plot(meanYHat[!, depColumn], meanYHat[!, "mean"], title=string("PDP Plot: Predictions vs ", depColumn), xlabel=depColumn, ylabel = "Output", legend=false)
 
-        # # generate the statistics for every class in target column and make the subplot
-        # for i in 1:length(categories)
-        #         meanYHat = combine(groupedDfCross,categories[i]=>mean=>"mean")
-        #         sort!(meanYHat, depColumn) # to make sure the the db is in ascending order of target var
-        #         plot!(p, meanYHat[!, depColumn], meanYHat[!, "mean"], subplot=i, title=string(categories[i]))
-        # end
 
         # return the subplot
         return p
